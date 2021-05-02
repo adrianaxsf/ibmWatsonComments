@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(228, 214, 240);
+}
+
+textarea {
+  margin-bottom: 1rem;
+  outline: none;
+  resize: none;
+}
+
+button {
+  border-radius: 5px;
+  font-size: medium;
+
+}
+
+button:hover {
+  background-color: rgb(204, 201, 201);
+}
+
+.centro {
+  display: flex;
+  justify-content: center;
+}
+
+.caixaTexto {
+  display: flex;
+  flex-direction: column;
+}
+
+.caixaTexto > button {
+  padding-top: 20px;
+}
+
+.lerComentario > p {
+  font-weight: bolder;
+}
+
+#titulo > p {
+  font-weight: bolder;
+}
+
+.comentarios {
+  display: flex;
+  flex-direction: row;
+  min-height: 50px;
+
+}
+
+.exibeComentario {
+  width: 70%;
+}
+
+.exibeComentario > p {
+  text-align: justify;
+
+}
+
+@media (max-width:1023px) {
+  body {
+      padding-top: 15px;
+      padding-left: 20px;
+  }
+
+  p {
+      font-size: 20px;
+  }
+
+  .ouvir {
+      align-self: center;
+      padding-left: 15px;
+  }
+
+  #buttonOuvir {
+      width: 100%;
+  }
+
+  .centro {
+      display: flex;
+  }
+  .geral {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+  }
+}
+
+@media (min-width:1024px) {
+  body {
+      padding-top: 15px;
+  }
+
+  #cadastrar {
+      width: 90%;
+  }
+
+  .ouvir {
+      align-self: center;
+      padding-left: 10px;
+
+  }
+
+  .geral {
+      width: 60%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 40px;
+  }
+
+  .lerComentario {
+      width: 50%;
+
+  }
+
+  .inserirComentario {
+      width: 50%;
+
+  }
+
+  .linha-vertical {
+      height: 150%;
+      border-left: 2px solid;
+      color: rgb(172, 164, 164);
+      padding-left: 40px;
+  }
+}

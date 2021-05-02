@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link rel='stylesheet' href='../stylesheets/style.css'/>
+        <script>
+            async function play(id) {
+                const url = `http://localhost:3000/${id}.wav`
+                try {
+                    const audio = new Audio(url);
+                    await audio.play();
+                } catch  {
+                    window.setTimeout(() => {
+                        play(id)
+                    }, 500)
+
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="centro">
+            <div class="geral">
+                <div class="inserirComentario">
+                    <div id="titulo">
+                        <p>Adicionar Comentário</p>
+                    </div>
+                    <div class="caixaTexto">
+                        <form action="/postComentario" method="POST">
+                            <textarea
+                                class="form-control"
+                                name="comment"
+                                value="comment"
+                                id="descricaoSolicitacao"
+                                rows="8"
+                                style="width:90%"
+                                maxlength="250"></textarea>
+                        </div>
+                        <button type="submit" id="cadastrar">Cadastrar</button>
+                    </div>
+                </form>
+                <div class="linha-vertical"></div>
+                <div class="lerComentario">
+                    <p>Comentários</p>
+                <% if (comments.length) { %>
+                        <% comments.forEach(comentario => { %>
+                            <div class="comentarios">
+                                <div class="exibeComentario">
+                                    <p><%= comentario.comment %>
+                                    </p>
+                                </div>
+                                <div class="ouvir">
+                                    <button onclick="play(<%= comentario.id %>)" id="buttonOuvir">
+                                        Ouvir
+                                    </button>
+
+                                </div>
+                            </div>
+                            <% }) %>
+                            <% } else { %>
+                                <p>
+                                    Ainda não há comentarios registrados</p>
+                            <% } %>
+                        </div>
+                    </body>
+                </html>
