@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel='stylesheet' href='../stylesheets/style.css'/>
         <script>
-            async function play(id) {
-                const url = `http://localhost:3000/${id}.wav`
-                try {
-                    const audio = new Audio(url);
-                    await audio.play();
-                } catch  {
-                    window.setTimeout(() => {
-                        play(id)
-                    }, 500)
+            async function listenComment(id){
+                try{
+                    
+                }catch{
 
                 }
             }
@@ -26,7 +23,7 @@
                         <p>Adicionar Comentário</p>
                     </div>
                     <div class="caixaTexto">
-                        <form action="/postComentario" method="POST">
+                        <form action="/postComments" method="POST">
                             <textarea
                                 class="form-control"
                                 name="comment"
@@ -50,7 +47,7 @@
                                     </p>
                                 </div>
                                 <div class="ouvir">
-                                    <button onclick="play(<%= comentario.id %>)" id="buttonOuvir">
+                                    <button onclick="listenComment(<%= comentario.id %>)" id="buttonOuvir">
                                         Ouvir
                                     </button>
 

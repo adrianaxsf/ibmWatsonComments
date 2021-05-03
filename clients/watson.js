@@ -4,30 +4,16 @@ const {IamAuthenticator} = require('ibm-watson/auth');
 
 const textToSpeech = new TextToSpeechV1({
     authenticator: new IamAuthenticator(
-        {apikey: 'TU8_Lq4MACI_LspJS0Qr63qpmfa20a6h8-9JjyMlICp-'}
+        {apikey: 'SFX2VGgJES6MRzGscCagruob_WDShDNZu3LjpSxE8MEH'}
     ),
-    serviceUrl: 'https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/64b89757-7a' +
-            '7f-4d83-9469-67198a4c7bde'
+    serviceUrl: 'https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/e96c7fbe-5947-4786-9500-83e06c1d1bd1'
 });
 
-module.exports = async (text, id) => {
+module.exports = async (text) => {
     const synthesizeParams = {
         text: text,
-        accept: 'audio/wav',
+        accept: 'audio/webm',
         voice: 'pt-BR_IsabelaV3Voice'
     };
-
-    textToSpeech
-        .synthesize(synthesizeParams)
-        .then(response => {
-            return textToSpeech.repairWavHeaderStream(response.result);
-        })
-        .then(buffer => {
-            const url = '/audio.wav'
-            return fs.writeFileSync(`./public/${id}.wav`, buffer);
-        })
-        .catch(err => {
-            console.log('error:', err);
-        });
 
 }
