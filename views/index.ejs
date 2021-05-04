@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel='stylesheet' href='../stylesheets/style.css'/>
+        <link rel="stylesheet" href="../stylesheets/css/bootstrap.min.css">
+        <script>
+            async function listenComment (text) {
+                const response = await fetch(`http://localhost:3000/listen/${text}`, {
+                    method: 'GET',
+                    body: null,
+                    headers: {'Content-Type': 'application/json'}
+                }).then(async res => {
+                    const b = await res.blob()
+                    var blob = await new Blob([b], { type: 'audio/mp3' });
+                    var url = window.URL.createObjectURL(blob)
+                    window.audio = new Audio();
+                    window.audio.src = url;
+                    window.audio.play()
+                })
+            }
+            
+            </script>
+    </head>
+    <body>
+        
+        <div class="principal">
+            <div class="main container-sm">
+                <div class="insertComments col-6 ">
+                    <div id="title">
+                        <h4>Adicionar Comentário</h4>
+                    </div>
+                    <div class="form-floating">
+                        <form action="/postComments" method="POST">
+                        <textarea class="form-control" name="comment" value="comment" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                      </div>
+                      <button type="submit" id="sendComment" class="btn btn-light">Cadastrar</button>
+                
+                    </div>
+                </form>
+                <div class="line col-1"></div>
+                <div class="readComment col-5">
+                    <p>Comentários</p>
+                    <% if (comments.length) { %>
+                        <% comments.forEach(comentario => { %>
+                            <div class="comments">
+                                <div class="viewComment col-8">
+                                    <p><%= comentario.comment %>
+                                    </p>
+                                </div>
+                                <div class="listenComment col-2">
+                                    
+                                    <button onclick="listenComment('<%=comentario.comment%>')" class="btn btn-light">Ouvir</button>
+                                </div>
+                            <div class="deleteComment col-2">
+                                <form  action="/deleteComment/<%=comentario.id%>?_method=DELETE" method="POST"> 
+                                    <button type="submit" class="btn btn-light">Excluir</button>
+                                    </form>
+                            </div>
+                            </div>
+                            <% }) %>
+                            <% } else { %> 
+                                <p>
+                                    Ainda não há comentarios registrados</p>
+                            <% } %>
+                           
+                        </div>
+                    </body>
+                </html>
