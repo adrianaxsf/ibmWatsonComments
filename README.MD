@@ -1,8 +1,5 @@
 <b><h1> Leitor de comentários IBM Watson </h1>
 <br>
-https://github.com/adrianaxsf/ibmWatsonComments/blob/master/telaPrincipal.jpg
-
-<br>
 Para rodar localmente:
 <br>
 - É preciso ter o MySql Workbench instalado disponivel em https://dev.mysql.com/downloads/installer/
@@ -14,6 +11,10 @@ Digitar no terminal:<br>
 - <b> npx sequelize-cli db:create </b>para criar o banco de dados
 - <b>npx sequelize-cli db:migrate </b>para criar as tabelas
 - <b>npm start</b> para rodar a aplicação
+<<<<<<< HEAD
 - Abrir o navegador em localhost:3000 
 
 OBS: Clique em ouvir e aguarde alguns segundos.
+=======
+- Abrir o navegador em localhost:3000  
+>>>>>>> e3bfd2e6c91b5ccd6b440fcad468b40e3be778a9
