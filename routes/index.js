@@ -11,13 +11,6 @@ const textToSpeech = new TextToSpeechV1({
   serviceUrl: 'https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/e96c7fbe-5947-4786-9500-83e06c1d1bd1'
 });
 
-// const synthesizeParams = {
-//   text: text,
-//   accept: 'audio/webm',
-//   voice: 'pt-BR_IsabelaV3Voice'
-// };
-
-
 router.get('/', commentsController.listComments)
 router.post('/insertComments', commentsController.insertComments)
 router.delete('/deleteComment/:id', commentsController.destroy)
@@ -40,23 +33,5 @@ router.get('/listen/:text', async (req, res) => {
     res.status(500).json(error);
   }
   
-    // const text = req.params.text
-    // const params = {
-    //   text: text,
-    //   accept: "audio/webm",
-    //   voice: "pt-BR_IsabelaVoice",
-    // };
-    // try {
-    //   const { result } = await textToSpeech.synthesize(params)
-    //   .then(res => console.log(res))
-    //   .catch((err) => {
-    //     res.status(500).json('Erro para processar o texto.')
-    //   });
-    //   const transcript = result;
-    //   transcript.pipe(res);
-    // } catch (error) {
-    //   res.status(500).json(error);
-    // }
-  })
-
+})
 module.exports = router;
