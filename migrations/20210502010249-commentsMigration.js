@@ -10,11 +10,9 @@ module.exports = {
         autoIncrement: true
     },
     comment: Sequelize.STRING,
-    
-    },
-    {
-      timestamps: false
-  });
+    createdAt: Sequelize.DATE,
+    updatedAt: Sequelize.DATE,
+    });
      
   },
 

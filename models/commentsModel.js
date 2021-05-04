@@ -5,7 +5,9 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        comment: DataTypes.STRING, 
+        comment: DataTypes.STRING,
+        createdAt: DataTypes.DATE,
+        updatedAt: DataTypes.DATE, 
     })
     return comments;
 };

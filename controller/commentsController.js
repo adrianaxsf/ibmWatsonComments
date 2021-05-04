@@ -10,7 +10,6 @@ const commentsController = {
   insertComments: async (req,res) => {
     const {comment} = req.body
     const novoAudio = await watsonTTS(comment)
-    console.log(novoAudio)
  
     const response = await Comments.create(
       { comment: comment })
