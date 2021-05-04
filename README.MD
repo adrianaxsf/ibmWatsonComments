@@ -1,8 +1,5 @@
 <b><h1> Leitor de comentários IBM Watson </h1>
 <br>
-https://github.com/adrianaxsf/ibmWatsonComments/blob/master/telaPrincipal.jpg
-
-<br>
 Para rodar localmente:
 <br>
 - É preciso ter o MySql Workbench instalado disponivel em https://dev.mysql.com/downloads/installer/
