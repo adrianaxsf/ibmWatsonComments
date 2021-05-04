@@ -16,7 +16,6 @@ router.post('/insertComments', commentsController.insertComments)
 router.delete('/deleteComment/:id', commentsController.destroy)
 
 router.get('/listen/:text', async (req, res) => {
-  console.log('texto', req.params)
   const synthesizeParams = {
     text: req.params.text,
     accept: 'audio/webm',
@@ -28,7 +27,7 @@ router.get('/listen/:text', async (req, res) => {
     });
     const transcript = result;
     transcript.pipe(res);
-    console.log('dentro: ', result, transcript, res)
+
   } catch (error) {
     res.status(500).json(error);
   }

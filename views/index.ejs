@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-floating">
                         <form action="/postComments" method="POST">
-                        <textarea class="form-control" name="comment" value="comment" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                        <textarea class="form-control" name="comment" value="comment" placeholder="Escreva seu texto aqui" id="floatingTextarea2" style="height: 100px"></textarea>
                       </div>
                       <button type="submit" id="sendComment" class="btn btn-light">Cadastrar</button>
                 
@@ -42,7 +42,7 @@
                 </form>
                 <div class="line col-1"></div>
                 <div class="readComment col-5">
-                    <p>Comentários</p>
+                    <h5>Comentários</h5><br>
                     <% if (comments.length) { %>
                         <% comments.forEach(comentario => { %>
                             <div class="comments">
