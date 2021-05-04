@@ -14,4 +14,6 @@ Digitar no terminal:<br>
 - <b> npx sequelize-cli db:create </b>para criar o banco de dados
 - <b>npx sequelize-cli db:migrate </b>para criar as tabelas
 - <b>npm start</b> para rodar a aplicação
-- Abrir o navegador em localhost:3000  
+- Abrir o navegador em localhost:3000 
+
+OBS: Clique em ouvir e aguarde alguns segundos.

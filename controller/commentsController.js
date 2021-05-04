@@ -1,5 +1,4 @@
 const {Comments} = require("../models")
-const watsonTTS = require("../clients/watson")
 
 const commentsController = {
   listComments: async (req,res) => {
@@ -9,11 +8,8 @@ const commentsController = {
   
   insertComments: async (req,res) => {
     const {comment} = req.body
-    const novoAudio = await watsonTTS(comment)
- 
     const response = await Comments.create(
-      { comment: comment })
-    res.send(novoAudio)
+      { comment: comment})
   },
 
   destroy: async (req, res) => {
